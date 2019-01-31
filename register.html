@@ -8,16 +8,26 @@
 </head>
 <body>
         <form action="/register" method="post">
-        
             <input type="email" name="email" placeholder="email"><br>
             <input type="password" name="password" placeholder="password"><br>
             <input type="submit" value="register">
-            
-
         </form>
 
+<script>
+
+   const form =  document.getElementsByTagName("form")[0];
+   form.addEventListener("submit",checkForm);
 
 
+    function checkForm(event){
+        event.preventDefault();
+        pw = document.getElementsByTagName("input")[1].value;
+        if(pw.length>3) form.submit();
+        else(alert("password must be at least 4 char long"));
+        
+    }
 
+
+</script>
 </body>
 </html>
